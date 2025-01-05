@@ -52,6 +52,8 @@ def search(user_search):
                 file_path = os.path.join(root, file_name)
                 try:
                     with open(file_path, "r", encoding="utf-8", errors='ignore') as file:
+                        if file.name == "Put your DB here.txt":
+                            continue
                         print(PURPLE + f"[INFO] Searching in {file.name}...")
                         time.sleep(0.25)
                         content = file.readlines()
